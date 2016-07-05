@@ -1,0 +1,218 @@
+
+<html>
+<head>
+     <script type="text/javascript" src="jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/style1.css" >
+  
+</head>
+<body>
+
+  <div class="container" id="banner" style="width:100%;height:100%;">
+    <div style="z-index:10;"><h1 id="hello" style="color:#ffffff;margin-left:66%;margin-top:20%;display:inline-block;">Hello!</h1></div>
+     <a href="#about"  class=" page-scroll"><img id="arr" src="images/arrow.png"></a>
+
+  </div>
+    <nav id="header">
+     
+    <div class="nav-wrapper cyan darken-1">
+        
+<ul >
+    <li>&nbsp;&nbsp;&nbsp;</li>
+    <li ><h4 class="white-text center-align ">MOVIE</h4></li>
+      <ul class="right ">  
+      
+      <li><h5 class="white-text center-align ">Welcome !</h5></li>
+      <li><a class="btn white modal-trigger" href="#modal1" style="color:#00acc1;">Search</a></li>
+
+      
+      
+  </ul>
+</ul>
+    </div>
+  </nav>
+  
+<div id="about" style="width:100%;height:100%;margin-top:5%;" >
+  <div class="slideshow-container" style="width:100%;height:80%;">
+
+<div class="mySlides fade">
+  
+  <img src="images/c1.jpg" style="width:100%;height:90%;">
+  
+</div>
+
+<div class="mySlides fade">
+  
+  <img src="images/c2.jpg" style="width:100%;height:90%;">
+  
+</div>
+
+<div class="mySlides fade">
+  
+  <img src="images/c3.jpg" style="width:100%;height:90%;">
+ 
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+</div>
+<script>
+$('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top-150)
+        }, 1200, 'easeInOutExpo');
+        event.preventDefault();
+    });
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); 
+}
+
+</script>
+<div id="modal1" class="modal" style="width:80%;height:100%;">
+    <div class="modal-content">
+      <form id="form2" >
+        <div class="input-field " >
+          <input id="search1" type="text" name="movie" placeholder="movie title" required>
+          
+          <label for="search"><i class="material-icons" style="background:#fafafa;">movie name </i></label>
+          <input type="submit" class="btn cyan darken-1">
+          
+        </div>
+      </form>
+      <div id="container2" style="width:100%;height:50%;">
+        <h4 class="title2" style="display:inline-block;">Title</h4><h4 style="display:inline-block;">(</h4>
+    <h4 class="year2" style="display:inline-block;">Year</h4><h4 style="display:inline-block;">)</h4>
+    <img src="images/star.png" style="display:inline-block;margin-left:10%;width:5%;height:10%;">
+    <h5 class="rating2" style="display:inline-block;">Rating</h5><p style="display:inline-block;"> /10</p><br>
+    <span class="rated2" style="display:inline-block;margin:1%;">Rated</span>
+     <span class="runtime2" style="display:inline-block;margin:1%;">Runtime</span>
+     <span class="genre2" style="display:inline-block;margin:1%;">Genre</span>
+     <span class="released2" style="display:inline-block;margin:1%;">Released</span>
+     <br>
+     <div style=""><span class="poster2" style="">Poster</span></div>
+    
+     <strong style="display:inline-block;margin-top:-35%;margin-left:27%;">Plot :</strong><br>
+    <p class="plot2" style="margin-top:-30%;margin-left:27%;">Plot</p>
+    <strong style="display:inline-block;margin-left:27%;margin-top:-20%;">Director :&nbsp; </strong><span class="director2" style="display:inline-block;">Director</span><br>
+    <strong style="display:inline-block;margin-left:27%;">Cast : </strong><span class="cast2" style="display:inline-block;margin-left:27%;">Cast</span>
+    
+</div>
+
+    </div>
+    
+
+  </div> 
+  
+
+
+<script type="text/javascript" src="js/index1.js"></script>
+<div class="container" style="background:#e8eaf6; margin:0%;width:100%;height:100%;z-index:100;padding:2%;">
+
+<div class="card cyan darken-1 hoverable" id="box1" style="width:30%;height:35%;margin-top:5%;padding:2%;"><h4 style="color:#ffffff;">Check out movie compare!!</h4></div>
+<div class="card cyan darken-1 hoverable" id="box2" style="width:30%;height:40%;margin-top:1%;margin-left:0%;padding:2%;"><form id="form1" >
+        <div class="input-field " >
+          <input id="search2" type="text" name="movie" placeholder="movie title" required>
+          <input id="search3" type="text" name="movie" placeholder="movie title" required>
+          
+          <input type="submit" class="btn white "  style="color:#00acc1">
+          
+        </div>
+      </form></div>
+      
+      <div id="container">
+
+<div class="card cyan darken-1 " id="box3" style="width:30%;height:80%;padding:2%;margin-top:-37%;margin-left:35%;color:#ffffff;">
+
+  <h5 class="title">Title</h5>
+    <span class="awards">Awards</span>
+    <ul>
+    <li><p> MetaScore : </p><span class="metascore">metascore</span></li>
+    <li><p> Rating : </p><span class="rating">Rating</span></li>
+    <li><p>Votes : </p><span class="votes">votes</span></li>
+    <li><p>Tomato Meter : </p><span class="tmeter">tomatometer</span></li>
+   
+  </ul></div>
+  </div>
+  <div id="container1">
+<div class="card cyan darken-1 " id="box4" style="width:30%;height:80%;margin-top:-37.5%;margin-left:66%;padding:2%;color:#ffffff;">
+
+  <h5 class="title1">Title</h5>
+    <span class="awards1">Awards</span>
+    <ul>
+    <li><p> MetaScore : </p><span class="metascore1">metascore</span></li>
+    <li><p> Rating : </p><span class="rating1">Rating</span></li>
+    <li><p>Votes : </p><span class="votes1">votes</span></li>
+    <li><p>Tomato Meter : </p><span class="tmeter1">tomatometer</span></li>
+   
+  </ul></div>
+</div>
+
+
+</div>
+<div style="" class="parallax-container">
+  <div style="z-index:10;"><h1 id="thank" style="color:#ffffff;margin-left:56%;margin-top:20%;display:inline-block;">Thank You!</h1></div>
+<div class="parallax" ><img src="images/b6.jpg" ></div>
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+$('.parallax').parallax();
+window.addEventListener("scroll", myFunction);
+function myFunction() {
+var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (1400);
+
+if( scrollpercent > 0.399){
+$('#header').pushpin({top:550});
+}
+if( scrollpercent > 0.47)
+ { 
+
+  document.getElementById("box1").style.WebkitAnimation = "slideIn1 2s forwards";
+  document.getElementById("box1").style.animation = "slideIn1 2s forwards";
+  document.getElementById("box2").style.WebkitAnimation = "slideIn2 2s forwards 0.5s";
+  document.getElementById("box2").style.animation = "slideIn2 2s forwards 0.5s";
+  
+
+}
+if( scrollpercent > 1.22)
+{
+document.getElementById("thank").style.WebkitAnimation = "thanks 2s forwards";
+  document.getElementById("thank").style.animation = "thanks 2s forwards";
+}
+}
+
+
+</script>
+</body>
+</html>
+
+
+
+
